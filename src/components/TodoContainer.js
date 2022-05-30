@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import TodosList from './TodosList';
 import Header from './Header';
 import InputTodo from './InputTodo';
@@ -48,12 +49,33 @@ class TodoContainer extends React.Component {
     });
   };
 
+  addTodoItem = (title) => {
+    const { todos } = this.state;
+    this.setState({
+      todos: [
+        ...todos,
+        {
+          id: 4,
+          title,
+          completed: false,
+        },
+      ],
+    });
+  };
+
+  handleSubmit = (e) => {
+    const { addTodoProps } = this.props;
+    const { title } = this.state;
+    e.preventDefault();
+    addTodoProps(title);
+  };
+
   render() {
     const { todos } = this.state;
     return (
       <div>
         <Header />
-        <InputTodo />
+        <InputTodo addTodoProps={this.addTodoItem} />
         <TodosList
           todos={todos}
           handleChangeProps={this.handleChange}
@@ -63,5 +85,9 @@ class TodoContainer extends React.Component {
     );
   }
 }
+
+TodoContainer.propTypes = {
+  addTodoProps: PropTypes.func.isRequired,
+};
 
 export default TodoContainer;

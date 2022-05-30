@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class InputTodo extends React.Component {
   constructor(props) {
@@ -7,6 +8,16 @@ class InputTodo extends React.Component {
       title: '',
     };
   }
+
+  handleSubmit = (e) => {
+    const { addTodoProps } = this.props;
+    const { title } = this.state;
+    e.preventDefault();
+    addTodoProps(title);
+    this.setState({
+      title: '',
+    });
+  };
 
   onChange = (e) => {
     this.setState({
@@ -17,7 +28,7 @@ class InputTodo extends React.Component {
   render() {
     const { title } = this.state;
     return (
-      <form>
+      <form onSubmit={this.handleSubmit}>
         <input
           type="text"
           placeholder="Add Todo..."
@@ -30,5 +41,9 @@ class InputTodo extends React.Component {
     );
   }
 }
+
+InputTodo.propTypes = {
+  addTodoProps: PropTypes.func.isRequired,
+};
 
 export default InputTodo;
