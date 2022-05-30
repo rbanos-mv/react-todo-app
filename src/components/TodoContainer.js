@@ -27,9 +27,8 @@ class TodoContainer extends React.Component {
   }
 
   handleChange = (id) => {
-    const { todos } = this.state;
-    this.setState({
-      todos: todos.map((todo) => {
+    this.setState((prevState) => ({
+      todos: prevState.todos.map((todo) => {
         if (todo.id === id) {
           return {
             ...todo,
@@ -38,7 +37,7 @@ class TodoContainer extends React.Component {
         }
         return todo;
       }),
-    });
+    }));
   };
 
   render() {
