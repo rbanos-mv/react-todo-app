@@ -9,12 +9,15 @@ class TodoItem extends React.Component {
 
   render() {
     const { todo } = this.props;
-    if (!todo) {
-      return null;
-    }
+    const { title, completed, id } = todo;
 
-    return <li key={todo.id}>{todo.title}</li>;
-    //
+    return (
+      <li key={id}>
+        <input type="checkbox" checked={completed} />
+        {' '}
+        {title}
+      </li>
+    );
   }
 }
 
