@@ -42,7 +42,9 @@ class InputTodo extends React.Component {
           name="title"
           onChange={this.onChange}
         />
-        <button type="submit">Submit</button>
+        <button type="submit" className="input-submit">
+          Submit
+        </button>
       </form>
     );
   }
