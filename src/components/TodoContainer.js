@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
 import TodosList from './TodosList';
 import Header from './Header';
@@ -64,21 +63,6 @@ class TodoContainer extends React.Component {
     });
   };
 
-  handleSubmit = (e) => {
-    const { addTodoProps } = this.props;
-    const { title } = this.state;
-    e.preventDefault();
-    if (title.trim()) {
-      addTodoProps(title);
-      this.setState({
-        title: '',
-      });
-    } else {
-      // eslint-disable-next-line no-alert
-      alert('Please write item');
-    }
-  };
-
   render() {
     const { todos } = this.state;
     return (
@@ -96,9 +80,5 @@ class TodoContainer extends React.Component {
     );
   }
 }
-
-TodoContainer.propTypes = {
-  addTodoProps: PropTypes.func.isRequired,
-};
 
 export default TodoContainer;
