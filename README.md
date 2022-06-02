@@ -1,8 +1,5 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-> Hello! I am a software developer! I can help you build a product, feature or website. Tak a look of my works.
-> If you like what you see and have a project you need coded, don’t hesitate and contact me.
-
 # React Todo App
 
 [React Tutorial From Scratch: A Step-by-Step Guide (2021).](https://ibaslogic.com/react-tutorial-for-beginners/)
@@ -57,9 +54,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- Ibas Majid, author of [React Tutorial From Scratch: A Step-by-Step Guide (2021).](https://ibaslogic.com/react-tutorial-for-beginners/)
 
 ## 📝 License
 
